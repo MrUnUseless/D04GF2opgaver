@@ -6,7 +6,9 @@ namespace D04GF2opgaver
     {
         static void Main(string[] args)
         {
-            Opgave01.OpgaveRun();
+            //Here the numbers or names before or after Opgave can be changed to call and run different Opgaver 
+            Opgave31.OpgaveRun();
+            //Makes the program wait for user input (in this case press any key) in the terminal before progressing.
             Console.ReadKey();
         }
     }

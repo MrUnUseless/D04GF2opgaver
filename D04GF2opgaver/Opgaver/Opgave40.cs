@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace D04GF2opgaver.Opgaver
 {
-    class Opgave01
+    internal class Opgave40
     {
-        public static void OpgaveRun()
-        {
-            Console.WriteLine("opgave test");
-        }
     }
 }

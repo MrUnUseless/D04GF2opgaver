@@ -8,8 +8,10 @@ namespace D04GF2opgaver.Opgaver
 {
     class Opgave01
     {
-        public static void OpgaveRun() {
-            Console.WriteLine("opgave test");
+        public static void OpgaveRun() 
+        {
+            //Makes the program write "Hello world!" in the terminal.     
+            Console.WriteLine("Hello world!");
         }
     }
 }

@@ -6,12 +6,15 @@ using System.Threading.Tasks;
 
 namespace D04GF2opgaver.Opgaver
 {
-    class Opgave02
+    class Opgave11
     {
         public static void OpgaveRun()
         {
-            //Makes the program write "Hello world!" in the terminal
-            Console.WriteLine("Hello world!");            
+            //Sets Background color
+            Console.BackgroundColor = ConsoleColor.Green;
+            //Overwrites screen with background color.
+            Console.Clear();
+
         }
     }
 }

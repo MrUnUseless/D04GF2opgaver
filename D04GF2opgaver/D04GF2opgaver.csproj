@@ -9,4 +9,12 @@
     <InvariantGlobalization>true</InvariantGlobalization>
   </PropertyGroup>
 
+  <ItemGroup>
+    <EditorConfigFiles Remove="C:\Users\rasmu\source\repos\D04GF2opgaver\D04GF2opgaver\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="C:\Users\rasmu\source\repos\D04GF2opgaver\D04GF2opgaver\.editorconfig" />
+  </ItemGroup>
+
 </Project>

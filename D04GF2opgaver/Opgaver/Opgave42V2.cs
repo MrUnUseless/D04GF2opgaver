@@ -191,13 +191,13 @@ namespace D04GF2opgaver.Opgaver
         }//End method "Opgaverun"
 
 
-        //Start method "DrinkAmountAsk"
+        //Start method "DrinkAmountAsk".
         public static int DrinkAmountAsk()
         {
             //Presets "do-while" (amount check run) condition.
             bool InputWrongRunning = true;
 
-            //Presets "foreach" flag, then set by result of check for non-number/cipher.
+            //Presets "foreach"/empty flag, then set by result of check for non-cipher or empty.
             int numberflag = 1;
 
             //"do-while" loop checks if input is valid. If no lets user try again. If yes returns the desired amount of the drink in question.
@@ -216,10 +216,10 @@ namespace D04GF2opgaver.Opgaver
                 //Demands each ("foreach") character in string "drinkamount" to be gone through (one by one) and set as operating value for variable "mule" which in turn is initialized as type "char" (character).
                 foreach (char mule in drinkamount)
                 {
-                    //Here "mule" is checked to see if it's smaller than zero or bigger than nine (characters are writen in single quotes) and thus not a number/cipher (numbers/ciphers in character is from 0 to 9).
+                    //Here "mule" is checked to see if it's smaller than zero or bigger than nine (characters are writen in single quotes) and thus not a cipher (ciphers in character is from 0 to 9).
                     if (mule < '0' || mule > '9')
                     {
-                        //If a character in "drinkamount" is not a number/cipher then do the following: set variable "numberflag" to 0.
+                        //If a character in "drinkamount" is not a cipher then do the following: set variable "numberflag" to 0.
                         numberflag = 0;                        
                     }
                 }
@@ -235,7 +235,7 @@ namespace D04GF2opgaver.Opgaver
                         InputWrongRunning = false;
                         break;
 
-                    //If "numberflag" was set to 0 (as in a none number/cipher present in user input "drinkamount") then do the following.
+                    //If "numberflag" was set to 0 (as in a none cipher or empty present in user input "drinkamount") then do the following.
                     default:
 
                         /*Following code block writes in terminal window that the input could not be read and how to try again.

@@ -11,12 +11,12 @@ namespace D04GF2opgaver.Opgaver
         public static void OpgaveRun()
         {
             //Initializes variables and pre-sets them.
-            string sizeask = "0";
+            string RoomAsk = "0";
             string antalstring = "0";
             int price = 0;
-            int small = 120;
-            int medium = 160;
-            int large = 185;
+            int Enkelt = 765;
+            int Dobbelt = 980;
+            int large = 1250;
             int antalint = 0;
             int numberflag = 1;
             int bulkprice = 0;
@@ -28,43 +28,36 @@ namespace D04GF2opgaver.Opgaver
             {
                 //Clears terminal screen.
                 Console.Clear();
-                //Writes "TEXT" ("WriteLine" uses full line) in terminal at current cursor position. This is the introduction to the store.
-                Console.WriteLine("Velkommen til T-shirt butikken. Her kan du købe T-shirts i forskellige størrelser.");
-                Console.WriteLine();
-                Console.WriteLine("Vi fører i øjeblikket T-shirts i tre størrelser:");
-                Console.WriteLine();
-                Console.WriteLine("Small til 120 kr.");
-                Console.WriteLine();
-                Console.WriteLine("Medium til 160 kr.");
-                Console.WriteLine();
-                Console.WriteLine("Large til 185 kr.");
-                Console.WriteLine();
-                Console.WriteLine("Hvis du køber mere end 10 T-shirts får du 5% rabat.");
-                Console.WriteLine();
+                //Writes "TEXT" ("WriteLine" uses full line) in terminal at current cursor position. This is the introduction to the (mostly used as 1 hour) hotel.
+                Console.WriteLine("Velkommen til Det Lumre Hotel.\nHer kan du prøve at gætte hvad gæsterne før dig har lavet i sengen.\nTIP: Hvis du ikke betaler gebyret for skift af sengetøj er det nemmere at gætte.");                
+                Console.WriteLine("\nVi har tre typer værelser:\nEnkelt, Dobbelt og Familie (hvis du synes det er ok at tage børn med til et sted som dette).");                
+                Console.WriteLine("\nEnkeltværelse koster 765 kr. pr. dag.");             
+                Console.WriteLine("\nDobbeltværelse koster 980 kr. pr. dag.");                
+                Console.WriteLine("\nFamilieværelse (igen- børn her- really?) koster 1250 kr. pr. dag.");                
                 //Writes "TEXT" ("WriteLine" uses full line) in terminal at current cursor position. Asks user for desired size.
-                Console.WriteLine("Indtast din ønskede størrelse (brug venligst s for small, m for medium og l for large) og afslut med tryk på enter eller return: ");
-                //Reads ("ReadLine") and sets variable "sizeask" according to user input (input is converted to lower case if necessary by "ToLower").
-                sizeask = Console.ReadLine().ToLower();
-                //Checks if input is "s" for small and if yes sets "price". If not moves on to "else if".
-                if (sizeask == "s")
+                Console.WriteLine("\nIndtast ønsket type af værelse (brug venligst E for Enkelt, D for Dobbelt og F for Familie)\nog afslut med tryk på enter eller return:\n");
+                //Reads ("ReadLine") and sets variable "RoomAsk" according to user input (input is converted to lower case if necessary by "ToLower").
+                RoomAsk = Console.ReadLine().ToUpper();
+                //Checks if input is "E" for Enkelt and if yes sets "price". If not moves on to "else if".
+                if (RoomAsk == "E")
                 {
                     //Writes "TEXT" ("WriteLine" uses full line) in terminal at current cursor position.
-                    Console.WriteLine("Du har valgt størrelse Small");
-                    price = small;
+                    Console.WriteLine("Du har valgt Enkeltværelse");
+                    price = Enkelt;
                     //Input accepted so stop "while (true)" loop.
                     break;
                 }
-                //Checks if input is "m" for medium and if yes sets "price". If not moves on to "else if".
-                else if (sizeask == "m")
+                //Checks if input is "D" for Dobbelt and if yes sets "price". If not moves on to "else if".
+                else if (RoomAsk == "m")
                 {
                     //Writes "TEXT" ("WriteLine" uses full line) in terminal at current cursor position.
                     Console.WriteLine("Du har valgt størrelse Medium");
-                    price = medium;
+                    price = Dobbelt;
                     //Input accepted so stop "while (true)" loop.
                     break;
                 }
                 //Checks if input is "l" for large and if yes sets "price". If not moves on to "else".
-                else if (sizeask == "l")
+                else if (RoomAsk == "l")
                 {
                     //Writes "TEXT" ("WriteLine" uses full line) in terminal at current cursor position.
                     Console.WriteLine("Du har valgt størrelse large");
@@ -130,7 +123,7 @@ namespace D04GF2opgaver.Opgaver
             //Calculates price after possible discount.
             finalprice = discount * bulkprice;
             //Writes "TEXT" ("WriteLine" uses full line) in terminal at current cursor position. Sums up purchase order.
-            Console.WriteLine($"Du har bestilt {antalint} T-shirt(s) i størrelse {sizeask} af {price} kr. stykket.");
+            Console.WriteLine($"Du har bestilt {antalint} T-shirt(s) i størrelse {RoomAsk} af {price} kr. stykket.");
             //Writes "TEXT" ("WriteLine" uses full line) in terminal at current cursor position. Displays total price without any applicable discount.
             Console.WriteLine($"Det giver en samlet pris på {bulkprice} kr.");
             //Checks if discount applies and if so runs code in curly brackets.

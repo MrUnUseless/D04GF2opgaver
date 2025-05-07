@@ -197,6 +197,7 @@ namespace D04GF2opgaver.Opgaver
 
             //Resets "IIValidCheckCallerPrint" so it's ready for possible new use.
             IIValidCheckCallerPrint = "";
+
             //Returns result to method caller.
             return ItemAmountResult;
 
@@ -210,7 +211,7 @@ namespace D04GF2opgaver.Opgaver
             //Method level setup part: Initializes and/or sets/presets variables.
 
             //Presets "do-while" (input "ItemAmount" check run) condition.
-            bool ArrayFillingRunning = true;
+            bool ListFillingRunning = true;
 
             //Initializes integer version of user input "KarakterInput".
             int KarakterInputInt;
@@ -227,15 +228,15 @@ namespace D04GF2opgaver.Opgaver
                     Console.WriteLine("Brug værdierne fra den nye karakter skala (-3, 00, 02, 4, 7, 10 & 12)\n");
                     Console.WriteLine($"Indtast karakter nr. {KarakterInputCounter + 1}:");
 
-                    //Stops "for-while" by setting "ArrayFillingRunning" to false once last karakter has had its input.
+                    //Stops "for-while" by setting "ListFillingRunning" to false once last karakter has had its input.
                     if (KarakterInputCounter == KarakterInputAmount - 1);
                     {                       
-                        ArrayFillingRunning = false;
+                        ListFillingRunning = false;
                     }
 
                     string KarakterInput = Console.ReadLine();
                                         
-                    //Runs "switch case" according to user input "KarakterInput, filling array "KarakterList" with data or telling user to try again in case of wrong input.
+                    //Runs "switch case" according to user input "KarakterInput, filling list "KarakterList" with data or telling user to try again in case of wrong input.
                     switch (KarakterInput)
                     {
                         case "-3":
@@ -287,15 +288,15 @@ namespace D04GF2opgaver.Opgaver
                             Console.WriteLine("Tryk en tast for at prøve igen.");
                             //Adjusts counter "KarakterInputCounter" -1 as no value was entered and switch case needs to be run with correct "KarakterInputCounter" until inpur is correct. 
                             KarakterInputCounter--;
-                            //Makes sure "do-while" doesn't stop if on last input by resetting "ArrayFillingRunning" = true and thus passing "while" check.
-                            ArrayFillingRunning = true;
+                            //Makes sure "do-while" doesn't stop if on last input by resetting "ListFillingRunning" = true and thus passing "while" check.
+                            ListFillingRunning = true;
                             break;
 
                     }
                                         
                 }
 
-            } while (ArrayFillingRunning);//When not true ends do-while (main loop) of this method.
+            } while (ListFillingRunning);//When not true ends do-while (main loop) of this method.
 
         }//End method "KarakterListFiller()".
 

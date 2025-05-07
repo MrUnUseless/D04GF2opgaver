@@ -8,10 +8,21 @@ namespace D04GF2opgaver.Opgaver
 {
     class Opgave00Skabelon
     {
+        //Class level setup part: Initializes and/or sets/presets variables.
+
+        //Start method "Opgaverun".
         public static void OpgaveRun()
         {
-            //Writes "TEXT" in terminal at current cursor position- the "Line" part in WriteLine changes to next terminal line after finishing the code line.
-            Console.WriteLine("opgave test");
-        }
+            //Method level setup part: Initializes and/or sets/presets variables.
+
+
+            Console.Clear();
+
+
+
+
+        }//End method "Opgaverun".
+
+        //**NEW METHOD**
     }
 }

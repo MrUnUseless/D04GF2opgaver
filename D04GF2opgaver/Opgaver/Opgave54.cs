@@ -9,6 +9,13 @@ namespace D04GF2opgaver.Opgaver
     class Opgave54
     {
         //Class level setup part: Initializes and/or sets/presets variables.
+        public static int højde;
+        public static double højdeDouble;
+        public static int radius;
+        public static double radiusDouble;
+        public static double radiusIanden= Math.Pow(radius, 2);// radius * radius or radius in second power
+        public static double rumfangafcylinder;
+        
 
         //Start method "Opgaverun".
         public static void OpgaveRun()
@@ -16,20 +23,23 @@ namespace D04GF2opgaver.Opgaver
             //Calculating volume of cylinder using V = πr²h (Volume = Pi * (Radius * Radius) * Height).
             //Method level setup part: Initializes and/or sets/presets variables.
 
-            Console.Write("Indtast højde på cylinder i cm: ");
-            int højde = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Indtast højde på cylinder i cm:\n");
+            højde = Convert.ToInt32(Console.ReadLine());
 
-            Console.Write("Indtast længde på kassen i cm: ");
-            int længde = Convert.ToInt32(Console.ReadLine());
+            højdeDouble = højde;
 
-            Console.Write("Indtast bredde på kassen i cm: ");
-            int bredde = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Indtast radius på cylinder i cm:\n");
+            radius = Convert.ToInt32(Console.ReadLine());
 
-            int rumfangafkassen = rumfang(højde, længde, bredde);
-            Console.Write("Rumfanget af kassen er {0} cm³", rumfangafkassen);
+            radiusDouble = radius;
+            
+            rumfangafcylinder = rumfang(højdeDouble, radiusDouble);
+            Console.Write("\nRumfanget af cylinderen (med fem decimaler) er {0:N5} cm³", rumfangafcylinder);
 
-            //eller man kan skrive – Alt + 252 giver ³
-            Console.Write("Rumfanget af kassen er {0} cm³", rumfang(højde, længde, bredde));
+            Console.WriteLine("\n\nEller med en anden kode- samme resultat:");
+
+            //eller man kan skrive –:                 *******(Alt + 252 giver ³)****
+            Console.Write("\nRumfanget af cylinderen (med fem decimaler) er {0:N5} cm³", rumfang(højdeDouble, radiusDouble));
             // da metoden jo returnerer en værdi
             Console.ReadKey();
             
@@ -39,9 +49,11 @@ namespace D04GF2opgaver.Opgaver
         //**NEW METHOD**
 
         //Start method "rumfang".
-        static public int rumfang(int h, int l, int b)
+        //Calculating volume of cylinder using V = πr²h (Volume = Pi * (Radius * Radius) * Height).
+        static public double rumfang(double højderumfang, double radiusrumfang)
         {
-            int rumfang = h * l * b;
+            radiusIanden = Math.Pow(radiusrumfang, 2);
+            double rumfang = Math.PI * radiusIanden * højderumfang;
             return rumfang;
 
         }//End method "rumfang".
